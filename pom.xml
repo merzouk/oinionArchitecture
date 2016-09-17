@@ -13,7 +13,7 @@
 		<module>person</module>
 		<module>serviceWeb</module>
 		<module>model</module>
-		<module>contrat</module>
+		<module>contrats</module>
 		<module>use-cases</module>
 		<module>commons</module>
 	</modules>
@@ -51,7 +51,7 @@
 			</dependency>
 			<dependency>
 				<groupId>com.org</groupId>
-				<artifactId>contrat</artifactId>
+				<artifactId>contrats</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 			<dependency>

@@ -8,7 +8,7 @@
 		<artifactId>project</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<artifactId>contrat</artifactId>
+	<artifactId>contrats</artifactId>
 	<packaging>jar</packaging>
 	<name>contrat module</name>
 

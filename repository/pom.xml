@@ -20,7 +20,7 @@
 
 		<dependency>
 			<groupId>com.org</groupId>
-			<artifactId>contrat</artifactId>
+			<artifactId>contrats</artifactId>
 		</dependency>
 
 		<dependency>
