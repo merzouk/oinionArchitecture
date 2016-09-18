@@ -13,7 +13,7 @@ import com.org.contrat.ObjectContrat;
  * @package : com.org.person.contrat
  * @date    : 16 sept. 2016 22:51:57
  */
-public interface PersonContrat<T> extends ObjectContrat<T>
+public interface PersonContrat<T> extends ObjectContrat<T, Integer>
 {
    /**
     * 

@@ -1,6 +1,7 @@
 
 package com.org.contrat;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -11,14 +12,14 @@ import java.util.List;
  * @package : com.org.contrat
  * @date    : 16 sept. 2016 22:51:48
  */
-public interface ObjectContrat<T> 
+public interface ObjectContrat<T, I extends Serializable>
 {
    /**
     * 
     * @param primaryKey
     * @return
     */
-   T findById( Integer primaryKey );
+   T findById( I primaryKey );
    
    /**
     * 
@@ -38,7 +39,7 @@ public interface ObjectContrat<T>
    * 
    * @param primaryKey
    */
-   void deleteById( Integer primaryKey );
+   void deleteById( I primaryKey );
    
    /**
     * 
@@ -52,9 +53,9 @@ public interface ObjectContrat<T>
    void deleteAll();
    
    /**
-    * 
-    * @param t
-    * @return
-    */
-   boolean isExist( T t );
+   * 
+   * @param primaryKey
+   * @return
+   */
+   boolean isExist( I primaryKey );
 }
