@@ -94,6 +94,11 @@ public class PersonRepositoryTest
       /**
        * 
        */
+      boolean actual = personContrat.isExist( 1 );
+      Assert.assertEquals( true, actual );
+      /**
+       * 
+       */
       p = personContrat.findByEmail( email + "@email.com");
       id = p.getPersonId();
       Assert.assertNotNull( id );
