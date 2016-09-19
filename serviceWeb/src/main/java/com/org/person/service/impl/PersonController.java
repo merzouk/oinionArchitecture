@@ -175,16 +175,16 @@ public class PersonController implements Controller<PersonModel, Integer>
    * @see com.org.person.service.Controller#deleteById(java.lang.Integer)
    */
    @RequestMapping(value = "/deletePersonById/{primaryKey}", method = RequestMethod.DELETE, produces = MediaType.APPLICATION_JSON_VALUE)
-   public ResponseEntity<PersonModel> deleteById( @PathVariable("primaryKey") Integer primaryKey )
+   public void deleteById( @PathVariable("primaryKey") Integer primaryKey )
    {
-      logger.info( "get & Deleting Person with id " + primaryKey );
-      PersonModel person = listPerson.personByPrimaryKey( primaryKey );
-      if( person == null )
+      if( primaryKey != null && primaryKey.intValue() > 0 )
       {
-         logger.info( "Unable to delete. Person with id " + primaryKey + " not found" );
-         return new ResponseEntity<PersonModel>( HttpStatus.NOT_FOUND );
+         logger.info( "Deleting Person with id " + primaryKey );
+         deletePerson.deletePersonById( primaryKey );
       }
-      deletePerson.deletePersonById( primaryKey );
-      return new ResponseEntity<PersonModel>( new PersonModel(), HttpStatus.OK );
+      else
+      {
+         logger.info( "Unable to delete. Person with id {} ", primaryKey + " incorrect" );
+      }
    }
 }

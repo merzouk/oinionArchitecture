@@ -72,5 +72,5 @@ public interface Controller<T, I extends Serializable>
     * @param primaryKey
     * @return
     */
-   public ResponseEntity<T> deleteById( I primaryKey );
+   public void deleteById( I primaryKey );
 }
