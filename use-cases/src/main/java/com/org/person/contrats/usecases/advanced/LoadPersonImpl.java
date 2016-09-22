@@ -1,23 +1,3 @@
-/*
- *--------------------------------------------------------
- * admin
- *--------------------------------------------------------
- * Project     : repository
- *
- * Copyright admin.
- *
- *
- *-------------------------------------------------------- 
- * 
- * Fichier 		:	ListPersonImpl.java
- * Cree le 		: 	17 sept. 2016 : 18:29:35
- * Auteur		: 	admin
- * 
- * Description 	:
- * 
- *---------------------------------------------------------
- */
-
 package com.org.person.contrats.usecases.advanced;
 
 import java.util.List;

@@ -1,23 +1,3 @@
-/*
- *--------------------------------------------------------
- * admin
- *--------------------------------------------------------
- * Project     : use-cases
- *
- * Copyright admin.
- *
- *
- *-------------------------------------------------------- 
- * 
- * Fichier 		:	DeletePersonImpl.java
- * Cree le 		: 	17 sept. 2016 : 19:31:09
- * Auteur		: 	admin
- * 
- * Description 	:
- * 
- *---------------------------------------------------------
- */
-
 package com.org.person.contrats.usecases.advanced;
 
 import org.slf4j.Logger;

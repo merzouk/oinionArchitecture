@@ -70,11 +70,11 @@ public class PersonRepositoryImpl implements PersonContrat<PersonModel>
       PersonEntity entity = null;
       try
       {
-         entity = (PersonEntity)entityManager.find( PersonEntity.class, primaryKey );
+         entity = (PersonEntity) entityManager.find( PersonEntity.class, primaryKey );
       }
       catch( Exception e )
       {
-         logger.error( "Error during load  Person by id {} ", primaryKey, e );
+         logger.error( "Error during load Person by id {} ", primaryKey, e );
       }
       return toModel( entity );
    }
@@ -121,7 +121,7 @@ public class PersonRepositoryImpl implements PersonContrat<PersonModel>
       }
       catch( NoResultException e )
       {
-         logger.error( "Not found person by email {} ", email);
+         logger.error( "Not found person by email {} ", email );
       }
       return null;
    }
@@ -229,18 +229,28 @@ public class PersonRepositoryImpl implements PersonContrat<PersonModel>
    
    /**
     * 
-    * @see com.org.contrat.ObjectContrat#isExist(com.org.person.entity.PersonEntity)
+    * @param primaryKey
+    * @return
     */
-   public boolean isExist( PersonModel person )
+   public boolean isExist( Integer primaryKey )
    {
-      logger.debug( "isExist {}", person.toString() );
+      logger.debug( "isExist {}", primaryKey );
       try
       {
-         return findByLastName( person.getNom() ) != null;
+         PersonModel p = null;
+         if( primaryKey != null && primaryKey.intValue() > 0 )
+         {
+            p = findById( primaryKey );
+         }
+         if( p != null && p.getPersonId() != null && p.getPersonId().intValue() > 0 && primaryKey.equals(  p.getPersonId()) )
+         {
+            return true;
+         }
+         return false;
       }
       catch( Exception e )
       {
-         logger.error( "Error during search  Person primaryKey {}  ", person.toString(), e );
+         logger.error( "Error during search  Person primaryKey {}  ", primaryKey, e );
       }
       return false;
    }

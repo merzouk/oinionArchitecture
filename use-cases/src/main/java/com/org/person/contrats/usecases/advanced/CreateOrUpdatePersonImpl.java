@@ -1,22 +1,3 @@
-/*
- *--------------------------------------------------------
- * admin
- *--------------------------------------------------------
- * Project     : use-cases
- *
- * Copyright admin.
- *
- *
- *-------------------------------------------------------- 
- * 
- * Fichier 		:	CreateOrUpdatePersonImpl.java
- * Cree le 		: 	17 sept. 2016 : 18:41:57
- * Auteur		: 	admin
- * 
- * Description 	:
- * 
- *---------------------------------------------------------
- */
 
 package com.org.person.contrats.usecases.advanced;
 
