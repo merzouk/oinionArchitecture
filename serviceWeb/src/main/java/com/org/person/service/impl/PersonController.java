@@ -16,11 +16,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.org.person.contrats.usecases.CreateOrUpdatePerson;
-import com.org.person.contrats.usecases.DeletePerson;
-import com.org.person.contrats.usecases.LoadPerson;
+import com.org.contrats.usecases.CreateOrUpdate;
+import com.org.contrats.usecases.Deleting;
+import com.org.contrats.usecases.Loading;
 import com.org.person.model.PersonModel;
-import com.org.person.service.Controller;
+import com.org.service.Controller;
 
 /**
  * 
@@ -37,17 +37,17 @@ public class PersonController implements Controller<PersonModel, Integer>
    private static final Logger  logger = LoggerFactory.getLogger( PersonController.class );
    
    @Autowired
-   private LoadPerson           listPerson;
+   private Loading           listPerson;
    
    @Autowired
-   private CreateOrUpdatePerson createOrUpdate;
+   private CreateOrUpdate createOrUpdate;
    
    @Autowired
-   private DeletePerson         deletePerson;
+   private Deleting         deletePerson;
    
    /**
    * 
-   * @see com.org.person.service.Controller#listAll()
+   * @see com.org.service.Controller#listAll()
    */
    @RequestMapping(value = "/persons/", method = RequestMethod.GET)
    public ResponseEntity<List<PersonModel>> listAll()
@@ -63,7 +63,7 @@ public class PersonController implements Controller<PersonModel, Integer>
    
    /**
    * 
-   * @see com.org.person.service.Controller#getById(java.lang.Integer)
+   * @see com.org.service.Controller#getById(java.lang.Integer)
    */
    @RequestMapping(value = "/getPersonById/{primaryKey}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
    public ResponseEntity<PersonModel> getById( @PathVariable("primaryKey") Integer primaryKey )
@@ -80,7 +80,7 @@ public class PersonController implements Controller<PersonModel, Integer>
    
    /**
     * 
-    * @see com.org.person.service.Controller#getByEmail(java.lang.String, java.lang.String)
+    * @see com.org.service.Controller#getByEmail(java.lang.String, java.lang.String)
     */
    @RequestMapping(value = "/getPersonByEmail/{email}/{domain}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
    public ResponseEntity<PersonModel> getByEmail( @PathVariable("email") String email, @PathVariable("domain") String domain )
@@ -97,7 +97,7 @@ public class PersonController implements Controller<PersonModel, Integer>
    
    /**
     * 
-    * @see com.org.person.service.Controller#getByLastName(java.lang.String)
+    * @see com.org.service.Controller#getByLastName(java.lang.String)
     */
    @RequestMapping(value = "/getPersonByLastName/{lastName}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
    public ResponseEntity<List<PersonModel>> getByLastName( @PathVariable("lastName") String lastName )
@@ -114,7 +114,7 @@ public class PersonController implements Controller<PersonModel, Integer>
    
    /**
     * 
-    * @see com.org.person.service.Controller#getByFirstAndLastName(java.lang.String, java.lang.String)
+    * @see com.org.service.Controller#getByFirstAndLastName(java.lang.String, java.lang.String)
     */
    @RequestMapping(value = "/getPersonByFirstAndLastName/{firstName}/{lastName}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
    public ResponseEntity<List<PersonModel>> getByFirstAndLastName( @PathVariable("firstName") String firstName, @PathVariable("lastName") String lastName )
@@ -131,7 +131,7 @@ public class PersonController implements Controller<PersonModel, Integer>
    
    /**
     * 
-    * @see com.org.person.service.Controller#create(java.lang.Object)
+    * @see com.org.service.Controller#create(java.lang.Object)
     */
    @RequestMapping(value = "/createPerson/", method = RequestMethod.POST)
    public ResponseEntity<PersonModel> create( @RequestBody PersonModel person )
@@ -151,7 +151,7 @@ public class PersonController implements Controller<PersonModel, Integer>
    
    /**
    * 
-   * @see com.org.person.service.Controller#update(java.lang.Integer, java.lang.Object)
+   * @see com.org.service.Controller#update(java.lang.Integer, java.lang.Object)
    */
    @RequestMapping(value = "/updatePerson/{primaryKey}", method = RequestMethod.PUT)
    public ResponseEntity<PersonModel> update( @PathVariable("primaryKey") Integer primaryKey, @RequestBody PersonModel person )
@@ -172,7 +172,7 @@ public class PersonController implements Controller<PersonModel, Integer>
    
    /**
    * 
-   * @see com.org.person.service.Controller#deleteById(java.lang.Integer)
+   * @see com.org.service.Controller#deleteById(java.lang.Integer)
    */
    @RequestMapping(value = "/deletePersonById/{primaryKey}", method = RequestMethod.DELETE, produces = MediaType.APPLICATION_JSON_VALUE)
    public void deleteById( @PathVariable("primaryKey") Integer primaryKey )

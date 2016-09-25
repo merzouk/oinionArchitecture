@@ -1,4 +1,4 @@
-package com.org.person.service;
+package com.org.service;
 
 import java.io.Serializable;
 import java.util.List;

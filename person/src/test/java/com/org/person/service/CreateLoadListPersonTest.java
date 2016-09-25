@@ -18,9 +18,9 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.org.person.contrats.usecases.CreateOrUpdatePerson;
-import com.org.person.contrats.usecases.DeletePerson;
-import com.org.person.contrats.usecases.LoadPerson;
+import com.org.contrats.usecases.CreateOrUpdate;
+import com.org.contrats.usecases.Deleting;
+import com.org.contrats.usecases.Loading;
 import com.org.person.model.PersonModel;
 
 /**
@@ -43,13 +43,13 @@ public class CreateLoadListPersonTest
    private static final int     LENGTH = 10;
    
    @Autowired
-   private LoadPerson           listPerson;
+   private Loading           listPerson;
    
    @Autowired
-   private CreateOrUpdatePerson createOrUpdate;
+   private CreateOrUpdate createOrUpdate;
    
    @Autowired
-   private DeletePerson         deletePerson;
+   private Deleting         deletePerson;
    
    @Before
    public void init()

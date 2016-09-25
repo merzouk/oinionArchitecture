@@ -7,8 +7,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.org.contrats.usecases.Loading;
 import com.org.person.contrat.PersonContrat;
-import com.org.person.contrats.usecases.LoadPerson;
 import com.org.person.model.PersonModel;
 
 /**
@@ -20,7 +20,7 @@ import com.org.person.model.PersonModel;
  * @date    : 17 sept. 2016 18:29:35
  */
 @Service("loadPerson")
-public class LoadPersonImpl implements LoadPerson
+public class LoadPersonImpl implements Loading
 {
    
    private static final Logger        logger = LoggerFactory.getLogger( LoadPersonImpl.class );
@@ -30,7 +30,7 @@ public class LoadPersonImpl implements LoadPerson
    
    /**
     * 
-    * @see com.org.person.contrats.usecases.LoadPerson#listPerson()
+    * @see com.org.contrats.usecases.Loading#listPerson()
     */
    @Override
    public List<PersonModel> listPerson()
@@ -41,7 +41,7 @@ public class LoadPersonImpl implements LoadPerson
    
    /**
     * 
-    * @see com.org.person.contrats.usecases.LoadPerson#personByPrimaryKey(java.lang.Integer)
+    * @see com.org.contrats.usecases.Loading#personByPrimaryKey(java.lang.Integer)
     */
    @Override
    public PersonModel personByPrimaryKey( Integer primaryKey )
@@ -52,7 +52,7 @@ public class LoadPersonImpl implements LoadPerson
    
    /**
     * 
-    * @see com.org.person.contrats.usecases.LoadPerson#findPersonByLastName(java.lang.String)
+    * @see com.org.contrats.usecases.Loading#findPersonByLastName(java.lang.String)
     */
    @Override
    public List<PersonModel> findPersonByLastName( String lastName )
@@ -62,7 +62,7 @@ public class LoadPersonImpl implements LoadPerson
    
    /**
     * 
-    * @see com.org.person.contrats.usecases.LoadPerson#findPersonByEmail(java.lang.String)
+    * @see com.org.contrats.usecases.Loading#findPersonByEmail(java.lang.String)
     */
    @Override
    public PersonModel findPersonByEmail( String email )
@@ -72,7 +72,7 @@ public class LoadPersonImpl implements LoadPerson
    
    /**
     * 
-    * @see com.org.person.contrats.usecases.LoadPerson#findPersonByFirstNameAndLastName(java.lang.String, java.lang.String)
+    * @see com.org.contrats.usecases.Loading#findPersonByFirstNameAndLastName(java.lang.String, java.lang.String)
     */
    @Override
    public List<PersonModel> findPersonByFirstNameAndLastName( String firstName, String lastName )

@@ -5,8 +5,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.org.contrats.usecases.Deleting;
 import com.org.person.contrat.PersonContrat;
-import com.org.person.contrats.usecases.DeletePerson;
 import com.org.person.model.PersonModel;
 
 /**
@@ -18,7 +18,7 @@ import com.org.person.model.PersonModel;
  * @date    : 17 sept. 2016 19:31:09
  */
 @Service("deletePerson")
-public class DeletePersonImpl implements DeletePerson
+public class DeletePersonImpl implements Deleting
 {
    
    private static final Logger        logger = LoggerFactory.getLogger( DeletePersonImpl.class );
@@ -27,7 +27,7 @@ public class DeletePersonImpl implements DeletePerson
    private PersonContrat<PersonModel> personContrat;
    
    /**
-    * @see com.org.person.contrats.usecases.DeletePerson#deletePerson(com.org.person.model.PersonModel)
+    * @see com.org.contrats.usecases.Deleting#deletePerson(com.org.person.model.PersonModel)
     */
    @Override
    public void deletePerson( PersonModel model )
@@ -40,7 +40,7 @@ public class DeletePersonImpl implements DeletePerson
    }
    
    /**
-    * @see com.org.person.contrats.usecases.DeletePerson#deletePersonById(java.lang.Integer)
+    * @see com.org.contrats.usecases.Deleting#deletePersonById(java.lang.Integer)
     */
    @Override
    public void deletePersonById( Integer primaryKey )

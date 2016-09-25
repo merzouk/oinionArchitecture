@@ -1,5 +1,5 @@
 
-package com.org.person.contrats.usecases;
+package com.org.contrats.usecases;
 
 import java.util.List;
 
@@ -13,7 +13,7 @@ import com.org.person.model.PersonModel;
  * @package : com.org.person.contrats.usecases
  * @date    : 17 sept. 2016 18:27:39
  */
-public interface LoadPerson
+public interface Loading
 {
    /**
     * Load from data base list all persons

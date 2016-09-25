@@ -6,8 +6,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.org.contrats.usecases.CreateOrUpdate;
 import com.org.person.contrat.PersonContrat;
-import com.org.person.contrats.usecases.CreateOrUpdatePerson;
 import com.org.person.model.PersonModel;
 
 /**
@@ -19,7 +19,7 @@ import com.org.person.model.PersonModel;
  * @date    : 17 sept. 2016 18:41:57
  */
 @Service("createOrUpdate")
-public class CreateOrUpdatePersonImpl implements CreateOrUpdatePerson
+public class CreateOrUpdatePersonImpl implements CreateOrUpdate
 {
    
    private static final Logger        logger = LoggerFactory.getLogger( CreateOrUpdatePersonImpl.class );
@@ -28,7 +28,7 @@ public class CreateOrUpdatePersonImpl implements CreateOrUpdatePerson
    private PersonContrat<PersonModel> personContrat;
    
    /**
-    * @see com.org.person.contrats.usecases.CreateOrUpdatePerson#createPerson(com.org.person.model.PersonModel)
+    * @see com.org.contrats.usecases.CreateOrUpdate#createPerson(com.org.person.model.PersonModel)
     */
    @Override
    public PersonModel createPerson( PersonModel model )
@@ -38,7 +38,7 @@ public class CreateOrUpdatePersonImpl implements CreateOrUpdatePerson
    }
    
    /**
-    * @see com.org.person.contrats.usecases.CreateOrUpdatePerson#updatePerson(com.org.person.model.PersonModel)
+    * @see com.org.contrats.usecases.CreateOrUpdate#updatePerson(com.org.person.model.PersonModel)
     */
    @Override
    public PersonModel updatePerson( PersonModel model )

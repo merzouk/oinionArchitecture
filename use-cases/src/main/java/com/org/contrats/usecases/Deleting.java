@@ -1,5 +1,5 @@
 
-package com.org.person.contrats.usecases;
+package com.org.contrats.usecases;
 
 import com.org.person.model.PersonModel;
 
@@ -11,7 +11,7 @@ import com.org.person.model.PersonModel;
  * @package : com.org.person.contrats.usecases
  * @date    : 17 sept. 2016 19:29:19
  */
-public interface DeletePerson
+public interface Deleting
 {
    /**
     * deleting person
