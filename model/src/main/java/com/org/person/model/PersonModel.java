@@ -5,7 +5,7 @@ import java.io.Serializable;
 
 /**
  * 
- * A Renseigner.
+ * model du service
  * @author  : admin
  * @project : model
  * @package : com.org.person.model
