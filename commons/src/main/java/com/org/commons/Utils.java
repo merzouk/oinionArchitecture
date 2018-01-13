@@ -5,7 +5,7 @@ package com.org.commons;
  * A Renseigner.
  * @author  : admin
  * @project : contrat
- * @package : com.org.tools
+ * @package : com.org.commons
  * @date    : 16 sept. 2016 22:52:23
  */
 public class Utils
