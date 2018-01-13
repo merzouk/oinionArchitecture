@@ -3,7 +3,10 @@ package com.org.commons;
 
 /**
  * 
- * A Renseigner.
+ * 
+ * class contenant les constantes.
+ * 
+ * 
  * @author  : admin
  * @project : contrat
  * @package : com.org.commons
